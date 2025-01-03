@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+}
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.section {
+    padding: 32px 16px;
+    flex: 1;
+    background: #f2f2f2;
+}
+.section-title {
+    margin-bottom: 24px;
+}
+.btn {
+    padding: 12px;
+    background-color: green;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3;
+}
+.btn:hover,
+.btn.is-active {
+    background-color: lightgreen;
+}
+.btn.btn--prev {
+    margin-right: 12px;
+}
+.btn.btn--next {
+    margin-left: 12px;
+}
+.posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    list-style: none;
+}
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #fff;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+}
+.post__title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 36px;
+}
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    list-style: none;
+    margin-top: 24px;
+}
+.pagination.is-hidden {
+    display: none;
+}
+.pagination .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    min-width: 40px;
+    width: max-content;
+}
+
+@media (max-width: 500px) {
+    .pagination {
+        flex-wrap: wrap;
+    }
+    .pagination__prev {
+        order: 2;
+        width: calc(50% - 4px);
+    }
+    .pagination__next {
+        order: 3;
+        width: calc(50% - 4px);
+    }
+    .pagination .btn {
+        width: 32px;
+        min-width: 32px;
+        height: 32px;
+    }
+    .btn.btn--prev {
+        margin-right: 0;
+        width: 100%;
+        padding: 0 12px;
+    }
+    .btn.btn--next {
+        margin-left: 0;
+        width: 100%;
+        padding: 0 12px;
+    }
+}
